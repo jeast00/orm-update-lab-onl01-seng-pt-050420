@@ -19,7 +19,7 @@ class Student
       CREATE TABLE IF NOT EXISTS students (
         id INTEGER PRIMARY KEY,
         name TEXT,
-        grade TEXT
+        grade INTEGER
       )
       SQL
 
@@ -55,7 +55,7 @@ class Student
   end
 
   def self.new_from_db(row)
-    new_student = Student.new(row)
+    new_student = Student.new
     new_student.id = row[0]
     new_student.name = row[1]
     new_student.grade = row[2]
