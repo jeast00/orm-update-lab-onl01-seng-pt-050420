@@ -50,5 +50,13 @@ class Student
     new_student
   end
 
+  def update
+    sql = <<-SQL
+      UPDATE students
+      SET name = ?, album = ?
+      WHERE id = ?
+      SQL
+  end
+
 
 end
